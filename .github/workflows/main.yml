@@ -1,0 +1,24 @@
+name: CNU PIPELINE
+
+on:
+  # Triggers the workflow on push events but only for the master branch
+  push:
+    branches: [ master ]
+  
+jobs:
+  # Contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out repository under $GITHUB_WORKSPACE, so job can access it
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo Hello, CNU!
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project
+          cat index.html
+          
