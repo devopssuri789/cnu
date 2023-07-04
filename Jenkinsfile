@@ -1,35 +1,34 @@
-/* groovylint-disable NestedBlockDepth */
 pipeline {
     agent any
     
     stages {
-        stage('Build and Deploy') {
+        stage('Build') {
             parallel {
-                stage('Metrics Management') {
+                stage('MyMetrics-Management') {
                     steps {
-                        bat 'echo "Hi This is First Stage - Metrics Management"'
+                        bat 'echo "Hi This is First Stage - MyMetrics-Management"'
                     }
                 }
 
-                stage('Tenant Management') {
+                stage('MyTenant Management') {
                     steps {
-                        bat 'echo "Hi This is Second Stage - Tenant Management"'
+                        bat 'echo "Hi This is Second Stage - MyTenant-Management"'
                     }
                 }
-                stage('ui-config Management') {
+                stage('My-ui-config Management') {
 
                     steps {
-                        bat 'echo "Hi This is Third Stage - ui-config Management"'
+                        bat 'echo "Hi This is Third Stage - My-ui-config-Management"'
                     }
                     }
-                stage('user management') {
+                stage('My-user-management') {
                     steps {
-                        bat 'echo "Hi This is Fourth Stage - user Management"'
+                        bat 'echo "Hi This is Fourth Stage - My-user-Management"'
                     }
                 }
-                stage('Deploy DAGS') {
+                stage('Deploying DAGS') {
                      steps{
-                         bat 'echo "Hi This is Fifth Stage - DAGS deployment Management"'
+                         bat 'echo "Hi This is Fifth Stage - My DAGS deployment Management"'
                     }
                 }
             }
